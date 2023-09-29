@@ -18,25 +18,30 @@ const destructivelyRemoveFirstCat = () =>{
 
 function appendCat(name){
          
-      const newCats = [
-        ...cats.slice(0, 1, 2),
-        name
-      ];
+      const newCats = [...cats, name];
       
     return newCats;
 }
 
 const prependCat=(name)=>{
 
+    const newCats = [name, ...cats];
+
+    return newCats
 }
 
 const removeLastCat = () =>{
-    let newCats = cats
+    let newCats = cats.slice(0,-1);
 
-    return newCats.pop()
+    return newCats;
 }
+
 
 const removeFirstCat = ()=>{
+
     let newCats = cats
-    return newCats.shift()
+
+    return newCats.slice(1);
 }
+
+// console.log(removeFirstCat())
